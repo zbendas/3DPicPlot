@@ -28,7 +28,7 @@ def render_graph():
     graph.set_xbound(0, 255)
     graph.set_ybound(0, 255)
     graph.set_zbound(0, 255)
-    plot.savefig(args.outfile)
+    plot.savefig(args.outfile, dpi=300)
     print("Image generated and saved at {}. "
           "This operation took {}".format(args.outfile, datetime.datetime.now() - generation_started))
 
@@ -60,8 +60,8 @@ if __name__ == "__main__":
     parser.add_argument('-a', '--animate', action="store_true", help="Render an animation")
     parser.add_argument('-m', '--movie_outfile', nargs='?', help="Path to output the animation")
     args = parser.parse_args()
-    figure = plot.figure()
-    graph = Axes3D(figure)
+    figure = plot.figure(tight_layout=True)
+    graph = figure.add_subplot(111, projection='3d')
     if args.animate:
         render_animation()
     else:
