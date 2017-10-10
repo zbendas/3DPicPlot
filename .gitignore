@@ -1,3 +1,5 @@
 *.idea/*
 Images/*
+!Images/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.png
 Figures/*
+!Figures/A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.png
