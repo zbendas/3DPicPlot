@@ -16,7 +16,7 @@ def render_graph():
     generation_started = datetime.datetime.now()
     image = cv2.imread(args.infile, 1)
     image = image[:, :, ::-1]  # Reverses OpenCV2's BGR color order to more-standard RGB color order
-    number_of_pixels = min(int((image.shape[0] * image.shape[1])*(1/3)), args.max_samples)
+    number_of_pixels = min(int((image.shape[0] * image.shape[1])*(1/2)), args.max_samples)
     random_pixel_x = random.choices(range(0, image.shape[0]), k=number_of_pixels)
     random_pixel_y = random.choices(range(0, image.shape[1]), k=number_of_pixels)
     for i, j in zip(random_pixel_x, random_pixel_y):

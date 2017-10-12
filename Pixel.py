@@ -25,7 +25,7 @@ class Pixel:
             self.G /= 255
             self.B /= 255
             self.normal = True
-            return Pixel([self.R, self.G, self.B])
+            return self
 
     def denormalize(self):
         if self.normal:
@@ -33,7 +33,7 @@ class Pixel:
             self.G *= 255
             self.B *= 255
             self.normal = False
-            return Pixel([self.R, self.G, self.B])
+            return self
         else:
             return False
 
