@@ -21,7 +21,7 @@ def render_graph():
     random_pixel_y = random.choices(range(0, image.shape[1]), k=number_of_pixels)
     for i, j in zip(random_pixel_x, random_pixel_y):
         pixel = Pixel(image[i, j])
-        graph.scatter(pixel.R, pixel.G, pixel.B, c=pixel.normalize().array(), marker="o", depthshade=False)
+        graph.scatter(pixel.R, pixel.G, pixel.B, c=pixel.hex_string, marker="o", depthshade=False)
     graph.set_xlabel('Red Value')
     graph.set_ylabel('Green Value')
     graph.set_zlabel('Blue Value')

@@ -5,10 +5,12 @@ class Pixel:
             self.G = 0
             self.B = 0
             self.normal = False
+            self.hex_string = "#000000"
         else:
             self.R = data[0]
             self.G = data[1]
             self.B = data[2]
+            self.hex_string = self.hex()
             if (0 < self.R < 1) and (0 < self.G < 1) and (0 < self.B < 1):
                 self.normal = True
             else:
@@ -44,3 +46,6 @@ class Pixel:
             return [self.B, self.G, self.R]
         else:
             raise ValueError("Unsupported mode parameter value provided.")
+
+    def hex(self):
+        return "#{:06x}".format((self.R << 16) | (self.G << 8) | self.B)
